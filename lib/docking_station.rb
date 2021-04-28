@@ -6,6 +6,9 @@ class DockingStation
   end
 
   def release_bike
-    Bike.new
+    unless @docked_bike
+      fail "No bikes available"
+    end
+    @docked_bike
   end
 end
